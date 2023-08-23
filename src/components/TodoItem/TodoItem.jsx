@@ -12,7 +12,6 @@ const TodoItem = ({ item }) => {
 
   return (
     <div
-      onClick={handleItemClick}
       className="todo-item"
       style={{
         display: "flex",
@@ -29,6 +28,9 @@ const TodoItem = ({ item }) => {
       <span>{item.title}</span>
       <span>{item.id}</span>
       <span>{item.completed ? "completed" : "not completed"}</span>
+      <div onClick={handleItemClick} className="remove-item">
+        X
+      </div>
     </div>
   );
 };

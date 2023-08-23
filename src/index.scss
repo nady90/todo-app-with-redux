@@ -8,3 +8,18 @@
 *::before {
   box-sizing: border-box;
 }
+
+// Theme
+:root {
+  --background-clr: white;
+  --primary-clr: black;
+}
+
+[data-theme="dark"] {
+  --background-clr: black;
+  --primary-clr: white;
+}
+
+* {
+  transition: all 0.3s ease-in-out;
+}

@@ -10,7 +10,6 @@ export const todoSlice = createSlice({
   reducers: {
     addTodoItem: (state, action) => {
       state.todoList.push({
-        // id: state.todoList.length,
         id: crypto.randomUUID(),
         title: action.payload,
         completed: false,
