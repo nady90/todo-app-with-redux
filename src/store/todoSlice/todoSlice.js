@@ -13,12 +13,19 @@ export const todoSlice = createSlice({
   name: "todo",
   initialState: INITIAL_STATE,
   reducers: {
-    addTodoItem: (state, action) => {
-      state.todoList.push({
-        id: crypto.randomUUID(),
-        title: action.payload,
-        completed: false,
-      });
+    addTodoItem: {
+      reducer(state, action) {
+        state.todoList.push(action.payload);
+      },
+      prepare(title) {
+        return {
+          payload: {
+            title,
+            id: crypto.randomUUID(),
+            completed: false,
+          },
+        };
+      },
     },
     removeTodoItem: (state, action) => {
       state.todoList = state.todoList.filter(
