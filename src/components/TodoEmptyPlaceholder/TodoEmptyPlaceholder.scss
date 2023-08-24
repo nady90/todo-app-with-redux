@@ -1,0 +1,31 @@
+.empty-placeholder-container {
+  padding: 30px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .inner-container {
+    cursor: pointer;
+
+    border: 1px dashed black;
+    border-radius: 5px;
+    padding: 30px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    svg {
+      path {
+        fill: var(--primary-txt-clr);
+      }
+    }
+    p {
+      color: var(--primary-txt-clr);
+      font-size: 30px;
+    }
+    &:hover {
+      border: 1px solid black;
+    }
+  }
+}

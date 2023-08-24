@@ -12,12 +12,18 @@
 // Theme
 :root {
   --background-clr: white;
-  --primary-clr: black;
+  --primary-txt-clr: black;
+  --container-bg: #fff7dc;
+  --card-bg: #fbb3b3;
+  --input-clr: #848484;
 }
 
 [data-theme="dark"] {
   --background-clr: black;
-  --primary-clr: white;
+  --primary-txt-clr: white;
+  --container-bg: #46599e;
+  --card-bg: #000;
+  --input-clr: #fff;
 }
 
 * {

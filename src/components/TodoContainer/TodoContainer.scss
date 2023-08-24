@@ -1,0 +1,92 @@
+.todo-container {
+  background-color: var(--container-bg);
+  width: clamp(300px, 40vw, 1000px);
+  padding: 20px 10px;
+  margin: 3rem 2rem;
+  border: 8px solid var(--primary-txt-clr);
+
+  display: flex;
+  flex-direction: column;
+
+  .add-new-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    #add-todo {
+      all: unset;
+      color: var(--input-clr);
+
+      flex-grow: 1;
+      height: 50px;
+      background-color: var(--background-clr);
+
+      padding: 2% 5%;
+
+      &:focus {
+        outline: 1px solid var(--input-clr);
+      }
+    }
+
+    .add-btn {
+      all: unset;
+      cursor: pointer;
+      background-color: var(--primary-txt-clr);
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      svg {
+        width: 80%;
+
+        path {
+          fill: var(--background-clr);
+        }
+      }
+    }
+  }
+
+  .items-container {
+    padding: 5px;
+  }
+}
+
+.clear-all-container {
+  cursor: pointer;
+  width: 30%;
+  height: 80px;
+
+  margin-bottom: 30px;
+
+  display: flex;
+  .del {
+    background-color: #f81d1d;
+    flex-basis: 30%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    svg {
+      max-height: 60%;
+    }
+  }
+  .clear-all-text {
+    color: #000;
+    font-size: 35px;
+    background-color: #d9d9d9;
+    text-align: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: max-content;
+    flex-grow: 1;
+    transition: all 0.5s ease-in-out;
+  }
+
+  &:hover .clear-all-text {
+    background-color: #f81d1d;
+    transform-origin: left center;
+  }
+}

@@ -1,4 +1,29 @@
 .todo-item {
-  background-color: var(--background-clr);
-  color: var(--primary-clr);
+  background-color: var(--card-bg);
+  color: var(--primary-txt-clr);
+
+  border-radius: 20px;
+  padding: 5px 15px;
+  margin-top: 10px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  svg {
+    cursor: pointer;
+  }
+
+  .completed-icon {
+    width: 30px;
+  }
+  .not-completed-icon {
+    fill: var(--primary-txt-clr);
+    width: 30px;
+  }
+  .cancel-icon {
+    fill: var(--primary-txt-clr);
+    width: 30px;
+    margin-left: auto;
+  }
 }
