@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const INITIAL_STATE = {
-  todoList: [{ id: 0, title: "Learn Redux", completed: false }],
+  todoList: [],
 };
 
 export const todoSlice = createSlice({
@@ -23,9 +23,25 @@ export const todoSlice = createSlice({
     clearTodoList: (state, action) => {
       state.todoList = [];
     },
+    markItemAsCompleted: (state, action) => {
+      state.todoList.find(
+        (item) => item.id === action.payload
+      ).completed = true;
+    },
+    markItemAsNotCompleted: (state, action) => {
+      state.todoList.find(
+        (item) => item.id === action.payload
+      ).completed = false;
+    },
   },
 });
 
-export const { addTodoItem, removeTodoItem, clearTodoList } = todoSlice.actions;
+export const {
+  addTodoItem,
+  removeTodoItem,
+  clearTodoList,
+  markItemAsCompleted,
+  markItemAsNotCompleted,
+} = todoSlice.actions;
 
 export default todoSlice.reducer;

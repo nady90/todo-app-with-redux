@@ -1,7 +1,11 @@
 import "./TodoItem.scss";
 // Importing libraries
 import { useDispatch } from "react-redux";
-import { removeTodoItem } from "../../store/todoSlice/todoSlice";
+import {
+  removeTodoItem,
+  markItemAsCompleted,
+  markItemAsNotCompleted,
+} from "../../store/todoSlice/todoSlice";
 
 const TodoItem = ({ item }) => {
   const dispatch = useDispatch();
@@ -10,10 +14,19 @@ const TodoItem = ({ item }) => {
     dispatch(removeTodoItem(item.id));
   };
 
+  const handleCompletedClick = (e) => {
+    dispatch(markItemAsCompleted(item.id));
+  };
+
+  const handleNotCompletedClick = () => {
+    dispatch(markItemAsNotCompleted(item.id));
+  };
+
   return (
     <div className="todo-item">
       {item.completed ? (
         <svg
+          onClick={handleNotCompletedClick}
           className="completed-icon"
           width="67"
           height="67"
@@ -25,6 +38,7 @@ const TodoItem = ({ item }) => {
         </svg>
       ) : (
         <svg
+          onClick={handleCompletedClick}
           title="Not Completed"
           className="not-completed-icon"
           width="67"
