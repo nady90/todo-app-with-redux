@@ -10,10 +10,51 @@
   align-items: center;
   gap: 10px;
 
+  .itme-title-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    span {
+    }
+    .edit-container {
+      position: absolute;
+      left: 0;
+      height: 150%;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      display: none;
+      .edit-icon-container {
+        cursor: pointer;
+        background-color: var(--background-clr);
+        outline: 1px solid var(--primary-txt-clr);
+
+        height: 100%;
+        width: 50px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        svg {
+          // height: 50%;
+          max-width: 20px;
+          path {
+            fill: var(--primary-txt-clr);
+          }
+        }
+      }
+
+      .edit-input {
+        height: 100%;
+      }
+    }
+  }
+
   svg {
     cursor: pointer;
   }
-
   .completed-icon {
     width: 30px;
   }
@@ -25,5 +66,17 @@
     fill: var(--primary-txt-clr);
     width: 30px;
     margin-left: auto;
+
+    &:hover {
+      transform: rotate(180deg);
+    }
+  }
+  .edit-icon {
+    stroke: var(--primary-txt-clr);
+    width: 30px;
+
+    &:hover {
+      transform: rotate(180deg);
+    }
   }
 }
