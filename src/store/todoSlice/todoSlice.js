@@ -1,7 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+const localStorageList =
+  localStorage.getItem("todo-list") !== null
+    ? JSON.parse(localStorage.getItem("todo-list"))
+    : [];
+
 const INITIAL_STATE = {
-  todoList: [],
+  todoList: localStorageList,
 };
 
 export const todoSlice = createSlice({
