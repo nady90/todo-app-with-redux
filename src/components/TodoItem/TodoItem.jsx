@@ -46,7 +46,6 @@ const TodoItem = ({ item }) => {
   };
 
   const handleEditFieldKeyDown = (e) => {
-    console.log(editFieldString);
     if (e.key === "Enter") {
       handleEdit();
     }
