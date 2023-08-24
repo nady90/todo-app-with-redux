@@ -35,12 +35,19 @@ const TodoItem = ({ item }) => {
     }
   };
 
-  const handleEditFiledChange = (e) => {
+  const handleEditFieldChange = (e) => {
     setEditFiledString(e.target.value);
   };
 
   const handleEdit = () => {
     dispatch(editItemTitle({ id: item.id, title: editFieldString }));
+    editContainerRef.current.style.display = "none";
+  };
+
+  const handleEditFieldKeyDown = (e) => {
+    if (e.key === "Enter") {
+      handleEdit();
+    }
   };
 
   return (
@@ -75,7 +82,8 @@ const TodoItem = ({ item }) => {
         <span>{item.title}</span>
         <div className="edit-container" ref={editContainerRef}>
           <input
-            onChange={handleEditFiledChange}
+            onChange={handleEditFieldChange}
+            onKeyDown={handleEditFieldKeyDown}
             type="text"
             className="edit-input"
             placeholder={item.title}

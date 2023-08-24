@@ -34,11 +34,8 @@ export const todoSlice = createSlice({
       ).completed = false;
     },
     editItemTitle: (state, action) => {
-      console.log(action.payload);
-
       state.todoList.find((item) => item.id === action.payload.id).title =
         action.payload.title;
-      console.log(action.payload.title);
     },
   },
 });
