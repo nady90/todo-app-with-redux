@@ -40,11 +40,13 @@ const TodoItem = ({ item }) => {
   };
 
   const handleEdit = () => {
+    if (editFieldString === "") return;
     dispatch(editItemTitle({ id: item.id, title: editFieldString }));
     editContainerRef.current.style.display = "none";
   };
 
   const handleEditFieldKeyDown = (e) => {
+    console.log(editFieldString);
     if (e.key === "Enter") {
       handleEdit();
     }
